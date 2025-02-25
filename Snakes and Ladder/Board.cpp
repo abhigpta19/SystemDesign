@@ -8,14 +8,13 @@ Board::Board(int size, vector<Player*> players, vector<BoardEntities*> snl) {
     this->size = size;
     this->players = players;
     
-    // Fill the board with snakes and ladders
     for (auto entity : snl) {
-        boardmap[entity->getStart()] = entity;  // Map start position to entity
+        boardmap[entity->getStart()] = entity; 
     }
 }
 
 void Board::play() {
-    srand(time(0));  // Seed for random number generation
+    srand(time(0));  
     
     bool gameOver = false;
     while (!gameOver) {
